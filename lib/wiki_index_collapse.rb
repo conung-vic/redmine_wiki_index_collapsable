@@ -24,8 +24,7 @@ module WikiIndexCollapse
             js = "onClick=\"do_some(this, event);\""
             content << "<li class=\""+css_class+"_item\""+js+" >\n"
             content << h(page.pretty_title)+"&nbsp;"
-            tmp_img = "<b>=>"+image_tag("/images/external.png")+"</b>"
-            content << link_to(tmp_img, {:controller => 'wiki', :action => 'index', :id => page.project, :page => page.title},
+            content << link_to("<b>=><img src=\"/images/external.png\"></b>", {:controller => 'wiki', :action => 'index', :id => page.project, :page => page.title},
                         :title => (page.respond_to?(:updated_on) ? l(:label_updated_time, distance_of_time_in_words(Time.now, page.updated_on)) : nil))
             content << "\n"+render_page_hierarchy_ext(pages, page.id)
           else

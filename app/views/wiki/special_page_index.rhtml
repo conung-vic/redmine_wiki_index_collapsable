@@ -1,3 +1,8 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'wiki_collapse', :plugin => 'redmine_wiki_index_collapsable' %>
+  <%= javascript_include_tag 'wiki_collapse', :plugin => 'redmine_wiki_index_collapsable' %>
+<% end %>
+
 <div class="contextual">
 <%= watcher_tag(@wiki, User.current) %>
 </div>
